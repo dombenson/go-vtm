@@ -111,7 +111,7 @@ Support for resources is being added as needed.
 - [ ] Listen IPs
 - [ ] Locations
 - [ ] Network Interface
-- [ ] Nodes
+- [x] Nodes
 - [ ] Per-location Service
 - [ ] Per Node SLM
 - [x] Pools
