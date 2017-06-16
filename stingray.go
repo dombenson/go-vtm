@@ -59,7 +59,6 @@ func NewClient(httpClient *http.Client, urlStr, username string, password string
 		relStats, _ = url.Parse(statsRelPath)
 	}
 	su = su.ResolveReference(relStats)
-	fmt.Println(su.String())
 
 	c := &Client{
 		Client:   httpClient,
