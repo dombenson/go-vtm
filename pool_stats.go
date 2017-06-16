@@ -14,11 +14,11 @@ type PoolStats struct {
 type PoolStatistics struct {
 	Algorithm          string `json:"algorithm"`
 	BytesIn            int64  `json:"bytes_in"`
-	BytesInHigh        int32  `json:"bytes_in_hi"`
-	BytesInLow         int32  `json:"bytes_in_low"`
+	BytesInHigh        uint32  `json:"bytes_in_hi"`
+	BytesInLow         uint32  `json:"bytes_in_low"`
 	BytesOut           int64  `json:"bytes_out"`
-	BytesOutHigh       int32  `json:"bytes_out_hi"`
-	BytesOutLow        int32  `json:"bytes_out_low"`
+	BytesOutHigh       uint32  `json:"bytes_out_hi"`
+	BytesOutLow        uint32  `json:"bytes_out_low"`
 	ConnectionsQueued  int    `json:"conns_queued"`
 	DisabledNodeCount  int    `json:"disabled"`
 	DrainingNodeCount  int    `json:"draining"`
@@ -49,11 +49,6 @@ func (r *PoolStats) Bytes() []byte {
 	b, _ := jsonMarshal(r)
 	return b
 }
-
-/*
-func (r *PoolStats) Bytes() []byte {
-	return []byte(fmt.Sprintln(r))
-}*/
 
 func (r *PoolStats) decode(data []byte) error {
 	return json.Unmarshal(data, &r)
