@@ -58,7 +58,6 @@ func NewClient(httpClient *http.Client, urlStr, username string, password string
 		statsRelPath := "../../status/local_tm/statistics/"
 		relStats, _ = url.Parse(statsRelPath)
 	}
-	fmt.Println(relStats)
 	su = su.ResolveReference(relStats)
 	fmt.Println(su.String())
 
