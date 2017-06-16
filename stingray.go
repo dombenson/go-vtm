@@ -8,6 +8,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
+	"errors"
 )
 
 const (
@@ -98,7 +99,7 @@ func (c *Client) doMakeRequest(pathType pathType, method, urlStr string, body *[
 		baseUrl = c.statsURL
 		break
 	default:
-		panic("Undefined path type")
+		return nil, errors.New("Tried to make request with an unknown path type")
 	}
 
 	u := baseUrl.ResolveReference(rel)
